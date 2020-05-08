@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -88,7 +88,6 @@
 				E3FF038D7CD6B52ED2E2F48E /* Pods-SmackApp.debug.xcconfig */,
 				3D015A253043817DBA8C7DB7 /* Pods-SmackApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
