@@ -9,11 +9,19 @@
 import UIKit
 
 class SignupVC: UIViewController {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var userImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        usernameTxt.delegate = self
+        emailTxt.delegate = self
+        passwordTxt.delegate = self
     }
     
 
@@ -26,8 +34,36 @@ class SignupVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Actions
     @IBAction func onCloseTapped(_ sender: Any) {
         performSegue(withIdentifier: "ChannelUnwind", sender: nil)
     }
     
+    @IBAction func onPickAvatarPressed(_ sender: Any) {
+    }
+    
+    @IBAction func onGenerateBackgroundTapped(_ sender: Any) {
+    }
+    
+    @IBAction func onCreateTapped(_ sender: Any) {
+        guard let email = emailTxt.text, email != "", let pass = passwordTxt.text, pass != "" else { return }
+        AuthService.instance.registerUser(email: email, password: pass) { (success) in
+            if success {
+                print("Registered User!")
+            }
+        }
+    }
+}
+
+// MARK: - Keyboard Methods
+extension SignupVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nxtTxtField = view.viewWithTag(textField.tag + 1) as? UITextField {
+            nxtTxtField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
 }
