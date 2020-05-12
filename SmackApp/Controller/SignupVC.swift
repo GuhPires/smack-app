@@ -1,19 +1,22 @@
 //
-//  LoginVC.swift
+//  SignupVC.swift
 //  SmackApp
 //
-//  Created by Gustavo Mac Mini on 11/05/20.
+//  Created by Gustavo Mac Mini on 12/05/20.
 //  Copyright © 2020 DEVX. All rights reserved.
 //
 
 import UIKit
 
-class LoginVC: UIViewController {
+class SignupVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
     
+
     /*
     // MARK: - Navigation
 
@@ -24,10 +27,7 @@ class LoginVC: UIViewController {
     }
     */
     @IBAction func onCloseTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "ChannelUnwind", sender: nil)
     }
     
-    @IBAction func onSignUpTapped(_ sender: Any) {
-        performSegue(withIdentifier: "SignUpSegue", sender: nil)
-    }
 }

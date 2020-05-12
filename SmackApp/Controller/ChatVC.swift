@@ -17,11 +17,7 @@ class ChatVC: UIViewController {
     }
     
     // MARK: - Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ChannelSegue" {
-//            let controller = segue.destination as! ChannelVC
-//        }
-//    }
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
     // MARK: - Actions
     @IBAction func onMenuTapped(_ sender: Any) {
