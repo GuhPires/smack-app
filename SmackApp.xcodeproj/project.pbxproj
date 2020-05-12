@@ -10,6 +10,7 @@
 		EC30EE4924650A5600F737DF /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30EE4824650A5600F737DF /* ChatVC.swift */; };
 		EC30EE4B24650A8300F737DF /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30EE4A24650A8300F737DF /* ChannelVC.swift */; };
 		EC30EE4F2465193C00F737DF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC30EE4E2465193C00F737DF /* GradientView.swift */; };
+		EC5EAA3D246A3BDC0068BB72 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5EAA3C246A3BDC0068BB72 /* LoginVC.swift */; };
 		ECFEC3A82464FF920027957A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFEC3A72464FF920027957A /* AppDelegate.swift */; };
 		ECFEC3AA2464FF920027957A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFEC3A92464FF920027957A /* SceneDelegate.swift */; };
 		ECFEC3AF2464FF920027957A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFEC3AD2464FF920027957A /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		EC30EE4824650A5600F737DF /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		EC30EE4A24650A8300F737DF /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		EC30EE4E2465193C00F737DF /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		EC5EAA3C246A3BDC0068BB72 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		ECFEC3A42464FF920027957A /* SmackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFEC3A72464FF920027957A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECFEC3A92464FF920027957A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				EC30EE4824650A5600F737DF /* ChatVC.swift */,
 				EC30EE4A24650A8300F737DF /* ChannelVC.swift */,
+				EC5EAA3C246A3BDC0068BB72 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				EC30EE4B24650A8300F737DF /* ChannelVC.swift in Sources */,
 				EC30EE4924650A5600F737DF /* ChatVC.swift in Sources */,
+				EC5EAA3D246A3BDC0068BB72 /* LoginVC.swift in Sources */,
 				EC30EE4F2465193C00F737DF /* GradientView.swift in Sources */,
 				ECFEC3A82464FF920027957A /* AppDelegate.swift in Sources */,
 				ECFEC3AA2464FF920027957A /* SceneDelegate.swift in Sources */,
