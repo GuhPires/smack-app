@@ -42,23 +42,50 @@ class AuthService {
         }
     }
     
-    // MARK: - Request
+    // MARK: - Requests
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         let lowerCaseEmail: String = email.lowercased()
-        
-        let headers: HTTPHeaders = [
-            "Content-Type": "application/json; charset=utf-8"
-        ]
         
         let body: [String: Any] = [
             "email": lowerCaseEmail,
             "password": password
         ]
         
-        AF.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseString { (response) in
-            print("RESPONSE: ", response)
+        AF.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADERS).responseString { (response) in
+//            print("RESPONSE: ", response)
             
             if response.error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.error as Any)
+            }
+        }
+    }
+    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        let lowerCaseEmail: String = email.lowercased()
+        
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
+        ]
+        
+        AF.request(LOGIN_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADERS).responseJSON { (response) in
+//            print("RESPONSE: ", response)
+            
+            if response.error == nil {
+                if let json = response.value as? Dictionary<String, Any> {
+                    if let email = json["user"] as? String {
+                        self.userEmail = email
+                    }
+
+                    if let token = json["token"] as? String {
+                        self.authToken = token
+                    }
+                }
+                
+                self.isLoggedIn = true
                 completion(true)
             } else {
                 completion(false)

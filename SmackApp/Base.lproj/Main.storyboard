@@ -186,6 +186,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onLoginTapped:" destination="O3o-YT-Pkl" eventType="touchUpInside" id="hcD-Lv-V8P"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EoG-81-VVS">
                                 <rect key="frame" x="60" y="209" width="255" height="84"/>
@@ -265,6 +268,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="mrR-MY-Wbq"/>
                     <connections>
+                        <outlet property="passwordTxt" destination="Ogh-Fg-bdh" id="o4L-fu-IRg"/>
+                        <outlet property="usernameTxt" destination="ImX-SU-pGP" id="6Ut-A6-SFp"/>
                         <segue destination="nj1-sh-UXA" kind="presentation" identifier="SignUpSegue" modalPresentationStyle="fullScreen" id="hc2-ph-r0X"/>
                     </connections>
                 </viewController>

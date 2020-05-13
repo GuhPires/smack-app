@@ -48,9 +48,13 @@ class SignupVC: UIViewController {
     
     @IBAction func onCreateTapped(_ sender: Any) {
         guard let email = emailTxt.text, email != "", let pass = passwordTxt.text, pass != "" else { return }
-        AuthService.instance.registerUser(email: email, password: pass) { (success) in
-            if success {
-                print("Registered User!")
+        AuthService.instance.registerUser(email: email, password: pass) { (created) in
+            if created {
+                AuthService.instance.loginUser(email: email, password: pass) { (logged) in
+                    if logged {
+                        print("Logged in User! ", AuthService.instance.authToken)
+                    }
+                }
             }
         }
     }
