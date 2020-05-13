@@ -16,7 +16,12 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let BASE_URL = "https://slack-app-chat.herokuapp.com/v1/"
 let REGISTER_URL = "\(BASE_URL)account/register"
 let LOGIN_URL = "\(BASE_URL)account/login"
+let ADD_USER_URL = "\(BASE_URL)user/add"
 let HEADERS: HTTPHeaders = [
+    "Content-Type": "application/json; charset=utf-8"
+]
+let AUTH_HEADERS: HTTPHeaders = [
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
 

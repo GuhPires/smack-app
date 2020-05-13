@@ -16,6 +16,10 @@ class SignupVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var userImg: UIImageView!
     
+    // MARK: - Global Variables
+    var avatarName: String = "profileDefault"
+    var avatarColor: String = "[0.5, 0.5, 0.5, 1]"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,12 +51,17 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func onCreateTapped(_ sender: Any) {
-        guard let email = emailTxt.text, email != "", let pass = passwordTxt.text, pass != "" else { return }
-        AuthService.instance.registerUser(email: email, password: pass) { (created) in
-            if created {
+        guard let name = usernameTxt.text, name != "", let email = emailTxt.text, email != "", let pass = passwordTxt.text, pass != "" else { return }
+        AuthService.instance.registerUser(email: email, password: pass) { (registered) in
+            if registered {
                 AuthService.instance.loginUser(email: email, password: pass) { (logged) in
                     if logged {
-                        print("Logged in User! ", AuthService.instance.authToken)
+                        AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor) { (created) in
+                            if created {
+                                
+                                self.performSegue(withIdentifier: "ChannelUnwind", sender: nil)
+                            }
+                        }
                     }
                 }
             }
@@ -63,7 +72,7 @@ class SignupVC: UIViewController {
 // MARK: - Keyboard Methods
 extension SignupVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nxtTxtField = view.viewWithTag(textField.tag + 1) as? UITextField {
+        if let nxtTxtField = view.viewWithTag(textField.tag + 1) as? UITextField, nxtTxtField.tag <= 5 {
             nxtTxtField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()

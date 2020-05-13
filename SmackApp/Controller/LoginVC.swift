@@ -53,7 +53,7 @@ class LoginVC: UIViewController {
 // MARK: - Keyboard Methods
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nxtTxtField = view.viewWithTag(textField.tag + 1) as? UITextField {
+        if let nxtTxtField = view.viewWithTag(textField.tag + 1) as? UITextField, nxtTxtField.tag <= 2 {
             nxtTxtField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
