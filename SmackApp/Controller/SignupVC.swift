@@ -45,6 +45,7 @@ class SignupVC: UIViewController {
     }
     
     @IBAction func onPickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: "AvatarPickerSegue", sender: nil)
     }
     
     @IBAction func onGenerateBackgroundTapped(_ sender: Any) {
