@@ -63,7 +63,7 @@ extension AvatarPickerVC: UICollectionViewDelegate, UICollectionViewDataSource, 
             cell.configureCell(index: indexPath.item, type: avatarType)
             return cell
         }
-        return UICollectionViewCell()
+        return AvatarCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

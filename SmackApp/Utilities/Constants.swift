@@ -29,3 +29,9 @@ let AUTH_HEADERS: HTTPHeaders = [
 let TOKEN_KEY = "token"
 let LOGGED_KEY = "loggedIn"
 let USER_EMAIL = "userEmail"
+
+// MARK: - Notification
+let NOTIFY_USER_DATA_DID_CHANGED = Notification.Name("notifyUserDataChanged")
+
+// MARK: - Colors
+let PURPLE_PLACEHOLDER = #colorLiteral(red: 0.3266413212, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)

@@ -65,7 +65,7 @@
                                     <action selector="onLoginTapped:" destination="oOd-Vy-3TQ" eventType="touchUpInside" id="qlT-G9-kbg"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Osx-Sk-19W">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Osx-Sk-19W" customClass="CircleImage" customModule="SmackApp" customModuleProvider="target">
                                 <rect key="frame" x="30" y="615" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="Fq3-oO-egp"/>
@@ -370,7 +370,7 @@
                                     <constraint firstAttribute="trailing" secondItem="KPL-jN-Q6g" secondAttribute="trailing" id="zUd-q8-Cs0"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="TIN-VE-WvQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="TIN-VE-WvQ" customClass="CircleImage" customModule="SmackApp" customModuleProvider="target">
                                 <rect key="frame" x="137.66666666666666" y="369.66666666666669" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="58f-zs-PBf"/>
@@ -413,32 +413,48 @@
                                     <action selector="onCreateTapped:" destination="nj1-sh-UXA" eventType="touchUpInside" id="8Lm-1n-vK5"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWI-Km-DEi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nsk-1K-ePy">
+                                <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Fb8-6B-Ip2" firstAttribute="centerX" secondItem="Bd2-2L-bH9" secondAttribute="centerX" id="1cW-6M-3G5"/>
                             <constraint firstItem="iDc-EO-2x8" firstAttribute="width" secondItem="TIN-VE-WvQ" secondAttribute="width" multiplier="0.99" id="358-Pg-Rc2"/>
+                            <constraint firstItem="nsk-1K-ePy" firstAttribute="centerX" secondItem="Bd2-2L-bH9" secondAttribute="centerX" id="4xO-2o-DQD"/>
                             <constraint firstItem="j37-dJ-ffb" firstAttribute="leading" secondItem="Oxc-A8-xI7" secondAttribute="leading" id="5MG-He-mAs"/>
                             <constraint firstItem="iDc-EO-2x8" firstAttribute="centerX" secondItem="Bd2-2L-bH9" secondAttribute="centerX" id="8fY-Hs-mHa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7rS-Ya-tnd" secondAttribute="trailing" id="Dof-Cb-WtO"/>
                             <constraint firstItem="ltY-yL-f6F" firstAttribute="top" secondItem="Bd2-2L-bH9" secondAttribute="topMargin" constant="85" id="Fox-vP-2vJ"/>
+                            <constraint firstItem="nsk-1K-ePy" firstAttribute="centerY" secondItem="Bd2-2L-bH9" secondAttribute="centerY" constant="-100" id="SPN-Fb-Qyl"/>
                             <constraint firstItem="7rS-Ya-tnd" firstAttribute="top" secondItem="Bd2-2L-bH9" secondAttribute="topMargin" constant="20" id="XAI-Pf-6VV"/>
+                            <constraint firstItem="gWI-Km-DEi" firstAttribute="top" secondItem="Bd2-2L-bH9" secondAttribute="top" id="bEX-nU-QKx"/>
                             <constraint firstItem="RVx-XZ-gdV" firstAttribute="trailing" secondItem="Oxc-A8-xI7" secondAttribute="trailing" constant="60" id="cEU-hW-YHC"/>
                             <constraint firstItem="RVx-XZ-gdV" firstAttribute="bottom" secondItem="j37-dJ-ffb" secondAttribute="bottom" constant="25" id="db5-Zb-PLF"/>
+                            <constraint firstAttribute="trailing" secondItem="gWI-Km-DEi" secondAttribute="trailing" id="g3t-tD-om7"/>
                             <constraint firstItem="Fb8-6B-Ip2" firstAttribute="top" secondItem="iDc-EO-2x8" secondAttribute="bottom" constant="15" id="hJ8-aa-XTf"/>
                             <constraint firstItem="ltY-yL-f6F" firstAttribute="centerX" secondItem="Bd2-2L-bH9" secondAttribute="centerX" id="mSt-MK-D0j"/>
+                            <constraint firstAttribute="bottom" secondItem="gWI-Km-DEi" secondAttribute="bottom" id="nlY-BQ-Vjf"/>
                             <constraint firstItem="j37-dJ-ffb" firstAttribute="trailing" secondItem="Oxc-A8-xI7" secondAttribute="trailing" id="o0z-i4-5bN"/>
                             <constraint firstItem="iDc-EO-2x8" firstAttribute="top" secondItem="TIN-VE-WvQ" secondAttribute="top" id="tYb-Hu-2aj"/>
                             <constraint firstItem="Oxc-A8-xI7" firstAttribute="top" secondItem="ltY-yL-f6F" secondAttribute="bottom" constant="40" id="vt9-eM-z0y"/>
                             <constraint firstItem="TIN-VE-WvQ" firstAttribute="centerX" secondItem="Bd2-2L-bH9" secondAttribute="centerX" id="w1p-PK-r7X"/>
                             <constraint firstItem="TIN-VE-WvQ" firstAttribute="top" secondItem="Oxc-A8-xI7" secondAttribute="bottom" constant="40" id="xLX-9H-YRx"/>
                             <constraint firstItem="Oxc-A8-xI7" firstAttribute="leading" secondItem="RVx-XZ-gdV" secondAttribute="leading" constant="60" id="yLe-x8-Rsl"/>
+                            <constraint firstItem="gWI-Km-DEi" firstAttribute="leading" secondItem="Bd2-2L-bH9" secondAttribute="leading" id="yR3-aO-Z2W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RVx-XZ-gdV"/>
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="oMK-9C-mfQ" id="vrl-jn-nyy"/>
                         <outlet property="passwordTxt" destination="KTf-hC-xO7" id="viN-RD-lgb"/>
+                        <outlet property="spinner" destination="nsk-1K-ePy" id="J0c-Gf-xR1"/>
+                        <outlet property="spinnerBg" destination="gWI-Km-DEi" id="uFI-Rn-XFh"/>
                         <outlet property="userImg" destination="TIN-VE-WvQ" id="vhK-zk-rm1"/>
                         <outlet property="usernameTxt" destination="KPL-jN-Q6g" id="eoZ-Rm-Tbo"/>
                         <segue destination="uJP-PU-XUL" kind="presentation" identifier="AvatarPickerSegue" modalPresentationStyle="fullScreen" id="rSj-F5-Asb"/>

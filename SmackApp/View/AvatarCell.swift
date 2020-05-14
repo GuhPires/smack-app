@@ -17,8 +17,8 @@ class AvatarCell: UICollectionViewCell {
     
     @IBOutlet weak var avatarImg: UIImageView!
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         setupView()
     }

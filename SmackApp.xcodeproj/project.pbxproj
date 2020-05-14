@@ -17,6 +17,7 @@
 		EC5EAA47246A6E920068BB72 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5EAA46246A6E920068BB72 /* RoundedButton.swift */; };
 		EC96C476246CD980003797D5 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96C475246CD980003797D5 /* AvatarPickerVC.swift */; };
 		EC96C478246CDBB4003797D5 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96C477246CDBB4003797D5 /* AvatarCell.swift */; };
+		ECE90260246CEE6A00840238 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9025F246CEE6A00840238 /* CircleImage.swift */; };
 		ECEF7C92246B949C008F55CE /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF7C91246B949C008F55CE /* UserDataService.swift */; };
 		ECFEC3A82464FF920027957A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFEC3A72464FF920027957A /* AppDelegate.swift */; };
 		ECFEC3AA2464FF920027957A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFEC3A92464FF920027957A /* SceneDelegate.swift */; };
@@ -40,6 +41,7 @@
 		EC5EAA46246A6E920068BB72 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		EC96C475246CD980003797D5 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		EC96C477246CDBB4003797D5 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		ECE9025F246CEE6A00840238 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		ECEF7C91246B949C008F55CE /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		ECFEC3A42464FF920027957A /* SmackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFEC3A72464FF920027957A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				EC30EE4E2465193C00F737DF /* GradientView.swift */,
 				EC5EAA46246A6E920068BB72 /* RoundedButton.swift */,
 				EC96C477246CDBB4003797D5 /* AvatarCell.swift */,
+				ECE9025F246CEE6A00840238 /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				EC30EE4B24650A8300F737DF /* ChannelVC.swift in Sources */,
 				EC96C476246CD980003797D5 /* AvatarPickerVC.swift in Sources */,
 				EC5EAA47246A6E920068BB72 /* RoundedButton.swift in Sources */,
+				ECE90260246CEE6A00840238 /* CircleImage.swift in Sources */,
 				EC5EAA3F246A497C0068BB72 /* SignupVC.swift in Sources */,
 				ECEF7C92246B949C008F55CE /* UserDataService.swift in Sources */,
 				EC30EE4924650A5600F737DF /* ChatVC.swift in Sources */,
