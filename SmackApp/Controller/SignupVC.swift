@@ -28,6 +28,13 @@ class SignupVC: UIViewController {
         passwordTxt.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
