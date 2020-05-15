@@ -13,6 +13,7 @@ class ChannelVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImg: CircleImage!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,8 @@ class ChannelVC: UIViewController {
     
     // MARK: - Navigation
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
-
+    
+    // MARK: - Actions
     @IBAction func onLoginTapped(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             let profile = ProfileVC()
@@ -53,5 +55,27 @@ class ChannelVC: UIViewController {
         } else {
             performSegue(withIdentifier: "LoginSegue", sender: nil)
         }
+    }
+    
+    @IBAction func onAddChannelTapped(_ sender: Any) {
+        let addChannel = AddChannelVC()
+        addChannel.modalPresentationStyle = .custom
+        present(addChannel, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Table View Methods
+extension ChannelVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            return cell
+        }
+        return ChannelCell()
     }
 }

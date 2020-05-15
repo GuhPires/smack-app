@@ -33,8 +33,6 @@ class MessageService {
                     debugPrint(error)
                 }
                 
-                print("-> ", self.channels)
-                
                 completion(true)
             } else {
                 completion(false)

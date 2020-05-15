@@ -76,7 +76,7 @@
                                 <rect key="frame" x="0.0" y="104" width="375" height="491"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JCV-jN-GKw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="JCV-jN-GKw" customClass="ChannelCell" customModule="SmackApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JCV-jN-GKw" id="QJe-Xx-XcL">
@@ -96,6 +96,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="Ku1-Jz-FeK" id="OfV-U6-wyH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -106,6 +109,9 @@
                                     <constraint firstAttribute="height" constant="20" id="i8v-wF-XzS"/>
                                 </constraints>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="onAddChannelTapped:" destination="oOd-Vy-3TQ" eventType="touchUpInside" id="ihi-Tm-bBf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -132,6 +138,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="loginBtn" destination="ffA-vt-AGQ" id="sTP-qL-a2H"/>
+                        <outlet property="tableView" destination="KDX-3S-Qgp" id="Nvg-Nf-KXh"/>
                         <outlet property="userImg" destination="Osx-Sk-19W" id="Xvd-fq-KvY"/>
                         <segue destination="O3o-YT-Pkl" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="thP-1Q-i7z"/>
                     </connections>
@@ -218,7 +225,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hz-cI-XVS">
                                         <rect key="frame" x="0.0" y="82" width="255" height="2"/>

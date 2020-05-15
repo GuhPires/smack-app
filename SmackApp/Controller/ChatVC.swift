@@ -20,7 +20,6 @@ class ChatVC: UIViewController {
                 if user {
                     NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
                     MessageService.instance.findAllChannels { (channels) in
-                        
                     }
                 }
             }
@@ -31,4 +30,5 @@ class ChatVC: UIViewController {
     @IBAction func onMenuTapped(_ sender: Any) {
         performSegue(withIdentifier: "ChannelSegue", sender: nil)
     }
+    
 }

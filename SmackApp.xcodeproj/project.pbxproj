@@ -21,6 +21,9 @@
 		ECB8EA32246E25B600D6F782 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECB8EA30246E25B600D6F782 /* ProfileVC.xib */; };
 		ECB8EA35246E3A1400D6F782 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8EA34246E3A1400D6F782 /* MessageService.swift */; };
 		ECB8EA37246E3A3200D6F782 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8EA36246E3A3200D6F782 /* Channel.swift */; };
+		ECB8EA39246E41AC00D6F782 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8EA38246E41AC00D6F782 /* ChannelCell.swift */; };
+		ECB8EA3C246E44EE00D6F782 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8EA3A246E44EE00D6F782 /* AddChannelVC.swift */; };
+		ECB8EA3D246E44EE00D6F782 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECB8EA3B246E44EE00D6F782 /* AddChannelVC.xib */; };
 		ECE90260246CEE6A00840238 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9025F246CEE6A00840238 /* CircleImage.swift */; };
 		ECEF7C92246B949C008F55CE /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF7C91246B949C008F55CE /* UserDataService.swift */; };
 		ECFEC3A82464FF920027957A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFEC3A72464FF920027957A /* AppDelegate.swift */; };
@@ -49,6 +52,9 @@
 		ECB8EA30246E25B600D6F782 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		ECB8EA34246E3A1400D6F782 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		ECB8EA36246E3A3200D6F782 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		ECB8EA38246E41AC00D6F782 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		ECB8EA3A246E44EE00D6F782 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
+		ECB8EA3B246E44EE00D6F782 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		ECE9025F246CEE6A00840238 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		ECEF7C91246B949C008F55CE /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		ECFEC3A42464FF920027957A /* SmackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +95,7 @@
 				EC5EAA3E246A497C0068BB72 /* SignupVC.swift */,
 				EC96C475246CD980003797D5 /* AvatarPickerVC.swift */,
 				ECB8EA2F246E25B600D6F782 /* ProfileVC.swift */,
+				ECB8EA3A246E44EE00D6F782 /* AddChannelVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 				EC5EAA46246A6E920068BB72 /* RoundedButton.swift */,
 				EC96C477246CDBB4003797D5 /* AvatarCell.swift */,
 				ECE9025F246CEE6A00840238 /* CircleImage.swift */,
+				ECB8EA38246E41AC00D6F782 /* ChannelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				ECB8EA30246E25B600D6F782 /* ProfileVC.xib */,
+				ECB8EA3B246E44EE00D6F782 /* AddChannelVC.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -244,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB8EA3D246E44EE00D6F782 /* AddChannelVC.xib in Resources */,
 				ECB8EA32246E25B600D6F782 /* ProfileVC.xib in Resources */,
 				ECFEC3B42464FFA60027957A /* LaunchScreen.storyboard in Resources */,
 				ECFEC3B12464FFA60027957A /* Assets.xcassets in Resources */,
@@ -301,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECB8EA31246E25B600D6F782 /* ProfileVC.swift in Sources */,
+				ECB8EA39246E41AC00D6F782 /* ChannelCell.swift in Sources */,
 				EC30EE4B24650A8300F737DF /* ChannelVC.swift in Sources */,
 				EC96C476246CD980003797D5 /* AvatarPickerVC.swift in Sources */,
 				EC5EAA47246A6E920068BB72 /* RoundedButton.swift in Sources */,
@@ -312,6 +323,7 @@
 				EC30EE4924650A5600F737DF /* ChatVC.swift in Sources */,
 				EC5EAA3D246A3BDC0068BB72 /* LoginVC.swift in Sources */,
 				EC30EE4F2465193C00F737DF /* GradientView.swift in Sources */,
+				ECB8EA3C246E44EE00D6F782 /* AddChannelVC.swift in Sources */,
 				ECFEC3A82464FF920027957A /* AppDelegate.swift in Sources */,
 				EC96C478246CDBB4003797D5 /* AvatarCell.swift in Sources */,
 				ECFEC3AA2464FF920027957A /* SceneDelegate.swift in Sources */,
