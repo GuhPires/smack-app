@@ -19,6 +19,7 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(channelsLoaded(_:)), name: NOTIFY_CHANNELS_LOADED, object: nil)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,8 +41,12 @@ class ChannelVC: UIViewController {
         setupUserInfo()
     }
     
+    @objc func channelsLoaded(_ notification: Notification) {
+        tableView.reloadData()
+    }
+    
     func setupUserInfo() {
-        if AuthService.instance.isLoggedIn {
+        if AuthService.instance.isLoggedIn && UserDataService.instance.name != "" {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
             userImg.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
@@ -49,6 +54,7 @@ class ChannelVC: UIViewController {
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
+            tableView.reloadData()
         }
     }
     
@@ -67,9 +73,11 @@ class ChannelVC: UIViewController {
     }
     
     @IBAction func onAddChannelTapped(_ sender: Any) {
-        let addChannel = AddChannelVC()
-        addChannel.modalPresentationStyle = .custom
-        present(addChannel, animated: true, completion: nil)
+        if AuthService.instance.isLoggedIn {
+            let addChannel = AddChannelVC()
+            addChannel.modalPresentationStyle = .custom
+            present(addChannel, animated: true, completion: nil)
+        }
     }
 }
 
@@ -86,5 +94,14 @@ extension ChannelVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return ChannelCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        
+        NotificationCenter.default.post(name: NOTIFY_CHANNEL_SELECTED, object: nil)
+        
+        navigationController?.popViewController(animated: true)
     }
 }

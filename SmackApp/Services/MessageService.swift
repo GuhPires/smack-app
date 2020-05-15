@@ -14,6 +14,7 @@ class MessageService {
     static let instance = MessageService()
     
     var channels = [Channel]()
+    var selectedChannel: Channel?
     
     func findAllChannels(completion: @escaping CompletionHandler) {
         AF.request(GET_CHANNELS_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: AUTH_HEADERS).responseJSON { (response) in
@@ -33,11 +34,16 @@ class MessageService {
                     debugPrint(error)
                 }
                 
+                NotificationCenter.default.post(name: NOTIFY_CHANNELS_LOADED, object: nil)
                 completion(true)
             } else {
                 completion(false)
                 debugPrint(response.error as Any)
             }
         }
+    }
+    
+    func clearChannels() {
+        channels.removeAll()
     }
 }

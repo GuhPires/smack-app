@@ -34,6 +34,8 @@ let USER_EMAIL = "userEmail"
 
 // MARK: - Notification
 let NOTIFY_USER_DATA_DID_CHANGED = Notification.Name("notifyUserDataChanged")
+let NOTIFY_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIFY_CHANNEL_SELECTED = Notification.Name("channelSelected")
 
 // MARK: - Colors
 let PURPLE_PLACEHOLDER = #colorLiteral(red: 0.3266413212, green: 0.4215201139, blue: 0.7752227187, alpha: 0.5)
