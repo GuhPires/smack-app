@@ -13,6 +13,8 @@ class LoginVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var spinnerBg: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class LoginVC: UIViewController {
     }
     
     func setupView() {
+        self.spinnerBg.isHidden = true
+        self.spinner.isHidden = true
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor : PURPLE_PLACEHOLDER])
         passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor : PURPLE_PLACEHOLDER])
         
@@ -35,16 +39,6 @@ class LoginVC: UIViewController {
         view.endEditing(true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     // MARK: - Actions
     @IBAction func onCloseTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -55,10 +49,21 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func onLoginTapped(_ sender: Any) {
+        spinnerBg.isHidden = false
+        spinner.isHidden = false
+        spinner.startAnimating()
         guard let email = usernameTxt.text, email != "", let pass = passwordTxt.text, pass != "" else { return }
-        AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
-            if success {
-                NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
+        AuthService.instance.loginUser(email: email, password: pass, completion: { (logged) in
+            if logged {
+                AuthService.instance.findUserByEmail { (user) in
+                    if user {
+                        self.spinnerBg.isHidden = true
+                        self.spinner.isHidden = true
+                        self.spinner.stopAnimating()
+                        NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
             }
         })
     }

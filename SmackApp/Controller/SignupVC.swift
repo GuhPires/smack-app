@@ -60,16 +60,6 @@ class SignupVC: UIViewController {
         view.endEditing(true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     // MARK: - Actions
     @IBAction func onCloseTapped(_ sender: Any) {
         performSegue(withIdentifier: "ChannelUnwind", sender: nil)

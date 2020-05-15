@@ -14,6 +14,14 @@ class ChatVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if AuthService.instance.isLoggedIn {
+            AuthService.instance.findUserByEmail { (user) in
+                if user {
+                    NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
+                }
+            }
+        }
     }
     
     // MARK: - Actions

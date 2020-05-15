@@ -249,17 +249,31 @@
                                     <action selector="onSignUpTapped:" destination="O3o-YT-Pkl" eventType="touchUpInside" id="QvW-Df-FLO"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsk-12-pOM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MLX-xY-grW">
+                                <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="VCM-yp-awm" firstAttribute="top" secondItem="0Jp-AK-5Qh" secondAttribute="bottom" id="267-Eq-i5a"/>
+                            <constraint firstItem="MLX-xY-grW" firstAttribute="centerY" secondItem="1Ca-4q-Rjc" secondAttribute="centerY" constant="-100" id="9ED-V7-6Ix"/>
+                            <constraint firstAttribute="trailing" secondItem="fsk-12-pOM" secondAttribute="trailing" id="BzA-EX-k0G"/>
                             <constraint firstItem="gfr-UV-fn2" firstAttribute="trailing" secondItem="EoG-81-VVS" secondAttribute="trailing" constant="60" id="D8K-dg-oma"/>
                             <constraint firstItem="VCM-yp-awm" firstAttribute="leading" secondItem="0Jp-AK-5Qh" secondAttribute="leading" id="Hdd-Fc-lcQ"/>
+                            <constraint firstItem="fsk-12-pOM" firstAttribute="top" secondItem="1Ca-4q-Rjc" secondAttribute="top" id="IF8-nM-UmU"/>
                             <constraint firstItem="EoG-81-VVS" firstAttribute="leading" secondItem="gfr-UV-fn2" secondAttribute="leading" constant="60" id="IVr-iL-rxh"/>
                             <constraint firstItem="0Jp-AK-5Qh" firstAttribute="top" secondItem="EoG-81-VVS" secondAttribute="bottom" constant="50" id="LRx-Yg-HBo"/>
+                            <constraint firstItem="fsk-12-pOM" firstAttribute="leading" secondItem="1Ca-4q-Rjc" secondAttribute="leading" id="LqH-0g-ppE"/>
                             <constraint firstItem="0Jp-AK-5Qh" firstAttribute="leading" secondItem="EoG-81-VVS" secondAttribute="leading" id="NVD-dO-fHI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dps-kC-9i8" secondAttribute="trailing" id="Paa-FU-rcJ"/>
+                            <constraint firstItem="MLX-xY-grW" firstAttribute="centerX" secondItem="1Ca-4q-Rjc" secondAttribute="centerX" id="Qz2-ql-bI6"/>
                             <constraint firstItem="EoG-81-VVS" firstAttribute="top" secondItem="a2w-y4-eaC" secondAttribute="bottom" constant="40" id="WSE-bK-K4f"/>
+                            <constraint firstAttribute="bottom" secondItem="fsk-12-pOM" secondAttribute="bottom" id="aRp-bz-uzG"/>
                             <constraint firstItem="a2w-y4-eaC" firstAttribute="centerX" secondItem="1Ca-4q-Rjc" secondAttribute="centerX" id="g3Z-Fx-B7X"/>
                             <constraint firstItem="Dps-kC-9i8" firstAttribute="top" secondItem="gfr-UV-fn2" secondAttribute="top" constant="20" id="gOb-ru-IdD"/>
                             <constraint firstItem="0Jp-AK-5Qh" firstAttribute="trailing" secondItem="EoG-81-VVS" secondAttribute="trailing" id="gp2-FH-gBg"/>
@@ -271,6 +285,8 @@
                     <navigationItem key="navigationItem" id="mrR-MY-Wbq"/>
                     <connections>
                         <outlet property="passwordTxt" destination="Ogh-Fg-bdh" id="o4L-fu-IRg"/>
+                        <outlet property="spinner" destination="MLX-xY-grW" id="5lf-8t-Y7j"/>
+                        <outlet property="spinnerBg" destination="fsk-12-pOM" id="wcQ-7W-e3P"/>
                         <outlet property="usernameTxt" destination="ImX-SU-pGP" id="6Ut-A6-SFp"/>
                         <segue destination="nj1-sh-UXA" kind="presentation" identifier="SignUpSegue" modalPresentationStyle="fullScreen" id="hc2-ph-r0X"/>
                     </connections>
@@ -413,9 +429,9 @@
                                     <action selector="onCreateTapped:" destination="nj1-sh-UXA" eventType="touchUpInside" id="8Lm-1n-vK5"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWI-Km-DEi">
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWI-Km-DEi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nsk-1K-ePy">
                                 <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>

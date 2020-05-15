@@ -114,14 +114,7 @@ class AuthService {
 //            print("RESPONSE: ", response)
                     
             if response.error == nil {
-                let json = JSON(response.value!)
-                let id = json["_id"].stringValue
-                let color = json["avatarColor"].stringValue
-                let avatarName = json["avatarName"].stringValue
-                let email = json["email"].stringValue
-                let name = json["name"].stringValue
-                
-                UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                self.setUserInfo(data: response.value!)
                 
                 completion(true)
             } else {
@@ -129,6 +122,31 @@ class AuthService {
                 debugPrint(response.error as Any)
             }
         }
+    }
+    
+    func findUserByEmail(completion: @escaping CompletionHandler) {
         
+        AF.request("\(FIND_USER_BY_EMAIL_URL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: AUTH_HEADERS).responseJSON { (response) in
+            
+            if response.error == nil {
+                self.setUserInfo(data: response.value!)
+                
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.error as Any)
+            }
+        }
+    }
+    
+    func setUserInfo(data: Any) {
+        let json = JSON(data)
+        let id = json["_id"].stringValue
+        let color = json["avatarColor"].stringValue
+        let avatarName = json["avatarName"].stringValue
+        let email = json["email"].stringValue
+        let name = json["name"].stringValue
+        
+        UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
     }
 }

@@ -20,7 +20,17 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChange(_:)), name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupUserInfo()
+    }
+    
     @objc func userDataDidChange(_ notify: Notification) {
+        setupUserInfo()
+    }
+    
+    func setupUserInfo() {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
@@ -36,6 +46,12 @@ class ChannelVC: UIViewController {
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
 
     @IBAction func onLoginTapped(_ sender: Any) {
-        performSegue(withIdentifier: "LoginSegue", sender: nil)
+        if AuthService.instance.isLoggedIn {
+            let profile = ProfileVC()
+            profile.modalPresentationStyle = .custom
+            present(profile, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "LoginSegue", sender: nil)
+        }
     }
 }
