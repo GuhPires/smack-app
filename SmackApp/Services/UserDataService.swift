@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UserDataService {
     static let instance = UserDataService()
@@ -27,5 +28,23 @@ class UserDataService {
     
     func setAvatarName(avatarName: String) {
         self.avatarName = avatarName
+    }
+    
+    func returnUIColor(components: String) -> UIColor {
+        let scanner = Scanner(string: components)
+        let skipped = CharacterSet(charactersIn: "[], ")
+        let comma = CharacterSet(charactersIn: ",")
+        scanner.charactersToBeSkipped = skipped
+        
+        var r, g, b, a: NSString?
+        r = scanner.scanUpToCharacters(from: comma) as NSString?
+        g = scanner.scanUpToCharacters(from: comma) as NSString?
+        b = scanner.scanUpToCharacters(from: comma) as NSString?
+        a = scanner.scanUpToCharacters(from: comma) as NSString?
+        let defaultColor = UIColor.lightGray
+        
+        guard let red = r, let green = g, let blue = b, let alpha = a else { return defaultColor }
+        
+        return UIColor(red: CGFloat(red.doubleValue), green: CGFloat(green.doubleValue), blue: CGFloat(blue.doubleValue), alpha: CGFloat(alpha.doubleValue))
     }
 }

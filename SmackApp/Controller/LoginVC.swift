@@ -58,7 +58,7 @@ class LoginVC: UIViewController {
         guard let email = usernameTxt.text, email != "", let pass = passwordTxt.text, pass != "" else { return }
         AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
             if success {
-                print("Logged in User! ", AuthService.instance.authToken)
+                NotificationCenter.default.post(name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
             }
         })
     }

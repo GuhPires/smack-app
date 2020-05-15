@@ -132,6 +132,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="loginBtn" destination="ffA-vt-AGQ" id="sTP-qL-a2H"/>
+                        <outlet property="userImg" destination="Osx-Sk-19W" id="Xvd-fq-KvY"/>
                         <segue destination="O3o-YT-Pkl" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="thP-1Q-i7z"/>
                     </connections>
                 </viewController>
@@ -296,7 +297,6 @@
                                 <connections>
                                     <action selector="onCloseTapped:" destination="O3o-YT-Pkl" eventType="touchUpInside" id="E1l-fq-gCj"/>
                                     <action selector="onCloseTapped:" destination="nj1-sh-UXA" eventType="touchUpInside" id="QVt-Rb-275"/>
-                                    <segue destination="JZf-Kr-NHn" kind="unwind" identifier="ChannelUnwind" unwindAction="prepareForUnwindWithSegue:" id="03o-4A-foK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-yL-f6F">
@@ -458,6 +458,7 @@
                         <outlet property="userImg" destination="TIN-VE-WvQ" id="vhK-zk-rm1"/>
                         <outlet property="usernameTxt" destination="KPL-jN-Q6g" id="eoZ-Rm-Tbo"/>
                         <segue destination="uJP-PU-XUL" kind="presentation" identifier="AvatarPickerSegue" modalPresentationStyle="fullScreen" id="rSj-F5-Asb"/>
+                        <segue destination="JZf-Kr-NHn" kind="unwind" identifier="ChannelUnwind" unwindAction="prepareForUnwindWithSegue:" id="SLi-9n-bhd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADt-gX-Sxa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -16,9 +16,6 @@ class ChatVC: UIViewController {
         super.viewDidLoad()
     }
     
-    // MARK: - Navigation
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
-    
     // MARK: - Actions
     @IBAction func onMenuTapped(_ sender: Any) {
         performSegue(withIdentifier: "ChannelSegue", sender: nil)
