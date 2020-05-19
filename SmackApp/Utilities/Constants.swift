@@ -19,6 +19,7 @@ let LOGIN_URL = "\(BASE_URL)account/login"
 let ADD_USER_URL = "\(BASE_URL)user/add"
 let FIND_USER_BY_EMAIL_URL = "\(BASE_URL)user/byEmail/"
 let GET_CHANNELS_URL = "\(BASE_URL)channel"
+let GET_MESSAGES_URL = "\(BASE_URL)message/byChannel"
 let HEADERS: HTTPHeaders = [
     "Content-Type": "application/json; charset=utf-8"
 ]

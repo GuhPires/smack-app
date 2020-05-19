@@ -15,7 +15,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DB-75-74y">
+                                <rect key="frame" x="0.0" y="644" width="375" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3RX-aU-oVW">
+                                        <rect key="frame" x="5" y="5" width="365" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="14e-sg-Mla"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMq-Mh-4q9">
+                                        <rect key="frame" x="330" y="10" width="30" height="30"/>
+                                        <state key="normal" image="send"/>
+                                        <connections>
+                                            <action selector="onSendTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KDq-04-c0V"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3RX-aU-oVW" firstAttribute="leading" secondItem="2DB-75-74y" secondAttribute="leading" constant="5" id="4GQ-W0-EkW"/>
+                                    <constraint firstAttribute="trailing" secondItem="3RX-aU-oVW" secondAttribute="trailing" constant="5" id="9dx-IJ-vbf"/>
+                                    <constraint firstAttribute="trailing" secondItem="QMq-Mh-4q9" secondAttribute="trailing" constant="15" id="UTW-3v-gde"/>
+                                    <constraint firstAttribute="height" constant="80" id="eJB-SJ-E5M"/>
+                                    <constraint firstItem="QMq-Mh-4q9" firstAttribute="centerY" secondItem="3RX-aU-oVW" secondAttribute="centerY" id="lKI-Cp-UMp"/>
+                                    <constraint firstItem="3RX-aU-oVW" firstAttribute="top" secondItem="2DB-75-74y" secondAttribute="top" constant="5" id="wEf-es-LmM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2DB-75-74y" secondAttribute="bottom" id="BWK-Hx-XPq"/>
+                            <constraint firstAttribute="trailing" secondItem="2DB-75-74y" secondAttribute="trailing" id="hPw-73-L56"/>
+                            <constraint firstItem="2DB-75-74y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="voS-3X-eyT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="SmackApp" id="p2o-JY-F2d">
@@ -28,6 +65,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="messageTxt" destination="3RX-aU-oVW" id="U0t-bf-DZH"/>
                         <segue destination="oOd-Vy-3TQ" kind="show" identifier="ChannelSegue" id="vP3-ok-ja0"/>
                     </connections>
                 </viewController>
@@ -612,6 +650,7 @@
         <image name="closeButton" width="28" height="28"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="28" height="24"/>
         <image name="smackLogo" width="48" height="40"/>
