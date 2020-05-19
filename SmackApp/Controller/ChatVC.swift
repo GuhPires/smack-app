@@ -11,11 +11,14 @@ import UIKit
 class ChatVC: UIViewController {
     
     // MARK: - Outlets
-    
     @IBOutlet weak var messageTxt: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -69,7 +72,7 @@ class ChatVC: UIViewController {
         guard let channelId = MessageService.instance.selectedChannel?._id else { return }
         MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (messages) in
             if messages {
-                
+                self.tableView.reloadData()
             }
         }
     }
@@ -89,5 +92,22 @@ class ChatVC: UIViewController {
                 }
             }
         }
+    }
+}
+
+// MARK: - Table View Methods
+extension ChatVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as? MessageCell {
+            let message = MessageService.instance.messages[indexPath.row]
+            cell.configureCell(message: message)
+            return cell
+        }
+        
+        return MessageCell()
     }
 }
