@@ -18,6 +18,8 @@ class ChatVC: UIViewController {
         super.viewDidLoad()
         
         view.bindToKeyboard()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tap)
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChanged(_:)), name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)), name: NOTIFY_CHANNEL_SELECTED, object: nil)
@@ -53,6 +55,10 @@ class ChatVC: UIViewController {
         updateWithCahnnel()
     }
     
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     func updateWithCahnnel() {
         let channelName = MessageService.instance.selectedChannel?.name ?? ""
         navigationItem.title = "#\(channelName)"
@@ -74,5 +80,14 @@ class ChatVC: UIViewController {
     }
     
     @IBAction func onSendTapped(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            guard let channelId = MessageService.instance.selectedChannel?._id, let message = messageTxt.text else { return }
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (sent) in
+                if sent {
+                    self.messageTxt.text = ""
+                    self.messageTxt.resignFirstResponder()
+                }
+            }
+        }
     }
 }
