@@ -51,49 +51,49 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="buT-wX-RAr" customClass="MessageCell" customModule="SmackApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="82.666664123535156"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85.666664123535156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="buT-wX-RAr" id="qNo-Mm-N2j" customClass="CircleImage" customModule="SmackApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82.666664123535156"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85.666664123535156"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XC9-dk-t3D" customClass="CircleImage" customModule="SmackApp" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="11" width="50" height="50"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="XC9-dk-t3D" customClass="CircleImage" customModule="SmackApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="16" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="Koq-kq-A56"/>
-                                                        <constraint firstAttribute="width" constant="50" id="Pxx-Lu-vHk"/>
+                                                        <constraint firstAttribute="width" constant="50" id="MWI-dL-gSW"/>
+                                                        <constraint firstAttribute="height" constant="50" id="wgn-Ev-Csa"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jhon Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twI-PD-qaI">
-                                                    <rect key="frame" x="75" y="11" width="78" height="21"/>
+                                                    <rect key="frame" x="80" y="16" width="78" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:33 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pz-yk-TKw">
-                                                    <rect key="frame" x="163" y="13" width="61" height="17"/>
+                                                    <rect key="frame" x="168" y="18" width="61" height="17"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf0-hk-0it">
-                                                    <rect key="frame" x="75" y="44" width="275" height="17.666666666666671"/>
+                                                    <rect key="frame" x="80" y="47" width="270" height="17.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Yf0-hk-0it" secondAttribute="bottom" constant="10" id="6LB-9l-4iU"/>
-                                                <constraint firstItem="twI-PD-qaI" firstAttribute="leading" secondItem="XC9-dk-t3D" secondAttribute="trailing" constant="10" id="Cph-cq-Gm0"/>
-                                                <constraint firstItem="XC9-dk-t3D" firstAttribute="top" secondItem="qNo-Mm-N2j" secondAttribute="topMargin" id="GJL-VS-5wH"/>
-                                                <constraint firstItem="2Pz-yk-TKw" firstAttribute="leading" secondItem="twI-PD-qaI" secondAttribute="trailing" constant="10" id="JrN-sD-IEe"/>
-                                                <constraint firstItem="twI-PD-qaI" firstAttribute="top" secondItem="qNo-Mm-N2j" secondAttribute="topMargin" id="KsN-9L-pTy"/>
-                                                <constraint firstItem="2Pz-yk-TKw" firstAttribute="centerY" secondItem="twI-PD-qaI" secondAttribute="centerY" id="X4o-Uh-xme"/>
-                                                <constraint firstItem="XC9-dk-t3D" firstAttribute="leading" secondItem="qNo-Mm-N2j" secondAttribute="leadingMargin" id="aTH-Wa-1Yg"/>
-                                                <constraint firstItem="Yf0-hk-0it" firstAttribute="leading" secondItem="XC9-dk-t3D" secondAttribute="trailing" constant="10" id="axr-h0-Uyq"/>
-                                                <constraint firstItem="Yf0-hk-0it" firstAttribute="top" secondItem="twI-PD-qaI" secondAttribute="bottom" constant="12" id="coU-XV-2YX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Yf0-hk-0it" secondAttribute="trailing" constant="10" id="uIU-qR-odQ"/>
+                                                <constraint firstItem="XC9-dk-t3D" firstAttribute="leading" secondItem="qNo-Mm-N2j" secondAttribute="leadingMargin" constant="5" id="Arr-Xo-4te"/>
+                                                <constraint firstItem="Yf0-hk-0it" firstAttribute="top" secondItem="twI-PD-qaI" secondAttribute="bottom" constant="10" id="BGc-QA-yMh"/>
+                                                <constraint firstItem="twI-PD-qaI" firstAttribute="leading" secondItem="XC9-dk-t3D" secondAttribute="trailing" constant="10" id="D2S-nL-Ljm"/>
+                                                <constraint firstItem="Yf0-hk-0it" firstAttribute="leading" secondItem="XC9-dk-t3D" secondAttribute="trailing" constant="10" id="JAw-50-rxq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Yf0-hk-0it" secondAttribute="bottom" constant="10" id="N2C-MP-O17"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Yf0-hk-0it" secondAttribute="trailing" constant="10" id="PfV-lk-7Xg"/>
+                                                <constraint firstItem="twI-PD-qaI" firstAttribute="top" secondItem="qNo-Mm-N2j" secondAttribute="topMargin" constant="5" id="X5c-Gw-A2b"/>
+                                                <constraint firstItem="2Pz-yk-TKw" firstAttribute="centerY" secondItem="twI-PD-qaI" secondAttribute="centerY" id="cvI-T7-dbQ"/>
+                                                <constraint firstItem="2Pz-yk-TKw" firstAttribute="leading" secondItem="twI-PD-qaI" secondAttribute="trailing" constant="10" id="k4f-U4-hmG"/>
+                                                <constraint firstItem="XC9-dk-t3D" firstAttribute="top" secondItem="qNo-Mm-N2j" secondAttribute="topMargin" constant="5" id="nic-zA-juB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

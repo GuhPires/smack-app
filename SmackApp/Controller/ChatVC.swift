@@ -24,6 +24,16 @@ class ChatVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         view.addGestureRecognizer(tap)
         
+        SocketService.instance.getChatMessage { (message) in
+            if message {
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    let index = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+                }
+            }
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(userDataDidChanged(_:)), name: NOTIFY_USER_DATA_DID_CHANGED, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(channelSelected(_:)), name: NOTIFY_CHANNEL_SELECTED, object: nil)
         
@@ -46,6 +56,7 @@ class ChatVC: UIViewController {
                         self.updateWithCahnnel()
                     } else {
                         self.navigationItem.title = "No channels yet!"
+                        self.tableView.reloadData()
                     }
                 }
             }
